@@ -15,4 +15,28 @@ public class Tester {
         myThread_2.start();
     }
 
+    public static void testProblem3() {
+        Thread_1 thread_1 = new Thread_1();
+        Thread_2 thread_2 = new Thread_2();
+        thread_1.start();
+        thread_2.start();
+    }
+}
+
+class Thread_2 extends Thread {
+    public void run() {
+        for (int i = 1; i < 11; i++) {
+            if (i % 2 == 0)
+                System.out.println(i);
+        }
+    }
+}
+
+class Thread_1 extends Thread {
+    public void run() {
+        for (int i = 1; i < 11; i++) {
+            if (i % 2 == 1)
+                System.out.println(i);
+        }
+    }
 }
